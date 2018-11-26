@@ -80,8 +80,16 @@ function createUser($params)
         if(!$result = $mysqlcon->query($query))
         {
             error_log("Insert user data error: ".$mysqlcon->errno. ": ".$mysqlcon->error);
+            
+            if($mysqlcon->errno == 1062)
+            {
+                return array('error'=> 'The given name already exists');
+            }
+            else
+            {
+                return array('error'=> 'Insert user data query error');
+            }
             $mysqlcon->close();
-            return array('error'=> 'Insert user data query error');
         }
    }
    else

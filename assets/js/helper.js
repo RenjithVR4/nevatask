@@ -34,7 +34,7 @@ function showLoadingDiv() {
     $(".modal-backdrop.loading.normal").remove();
     var html = "<div class=\"modal-backdrop loading normal\" style=\"position:fixed;z-index:3060;height:100%;top:0px;left:0px;bottom:0px;right:0px\"><span style='z-index:10;position:absolute;top:35%;left:45%;text-align;center'>\
     <h2 style='color:#fff;font-size:17px;margin:0px;line-height:0px'>\
-    <img src='assets/img/loader.gif'/></h2></span></div>";
+    <img src=''/></h2></span></div>";
     $("body").append(html);
 }
 

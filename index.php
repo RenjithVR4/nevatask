@@ -30,12 +30,29 @@ if($userid = sessionValidate(USER_SESSION_ID))
   <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Argon CSS -->
   <link type="text/css" href="assets/css/argon.css?v=1.0.1" rel="stylesheet">
+  <link type="text/css" href="assets/css/custom.css?v=1.0.1" rel="stylesheet">
   <!-- Docs CSS -->
   <link type="text/css" href="assets/css/docs.min.css" rel="stylesheet">
   <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
 </head>
 
+<script type="text/javascript">
+  document.onreadystatechange = function() {
+      var state = document.readyState
+      if (state == 'interactive') {
+          document.getElementById('contents').style.visibility = "hidden";
+      } else if (state == 'complete') {
+          setTimeout(function() {
+              document.getElementById('interactive');
+              document.getElementById('loading').style.visibility = "hidden";
+              document.getElementById('contents').style.visibility = "visible";
+          }, 1500);
+      }
+  }
+</script>
+
 <body>
+  <div id="loading"></div>
   <header class="header-global">
     <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
       <div class="container">
@@ -84,7 +101,7 @@ if($userid = sessionValidate(USER_SESSION_ID))
           <div class="col-lg-6">
             <div class="card bg-secondary shadow border-0">
               <div class="card-body px-lg-6 py-lg-6">
-                <!-- <p id="message"></p> -->
+                <p class="text-center">Please use your credentails to log in</p>
                 <div class="text-center text-muted mb-4">
                   <small>Login User</small>
                 </div>
