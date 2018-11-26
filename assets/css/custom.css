@@ -1,0 +1,13 @@
+
+.action {
+    color: #fefe !important;
+}
+
+.inactiveLink {
+    pointer-events: none;
+    cursor: none;
+ }
+
+.maxheight{
+    height: 100vh;
+}
